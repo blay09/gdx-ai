@@ -46,4 +46,9 @@ public class DefaultConnection<N> implements Connection<N> {
 		return toNode;
 	}
 
+	@Override
+	public boolean isValid(PathFinder<N> pathFinder) {
+		return true;
+	}
+
 }

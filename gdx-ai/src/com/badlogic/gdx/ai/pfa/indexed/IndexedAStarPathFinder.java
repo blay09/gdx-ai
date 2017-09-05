@@ -196,6 +196,11 @@ public class IndexedAStarPathFinder<N> implements PathFinder<N> {
 
 			Connection<N> connection = connections.get(i);
 
+			// If the connection isn't valid, we still count it as a visited node, but we won't be able to pass through here
+			if(!connection.isValid(this)) {
+				continue;
+			}
+
 			// Get the cost estimate for the node
 			N node = connection.getToNode();
 			float nodeCost = current.costSoFar + connection.getCost();

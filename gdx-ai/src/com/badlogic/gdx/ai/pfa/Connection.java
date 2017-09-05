@@ -25,12 +25,15 @@ package com.badlogic.gdx.ai.pfa;
 public interface Connection<N> {
 
 	/** Returns the non-negative cost of this connection */
-	public float getCost ();
+	float getCost();
 
 	/** Returns the node that this connection came from */
-	public N getFromNode ();
+	N getFromNode();
 
 	/** Returns the node that this connection leads to */
-	public N getToNode ();
+	N getToNode();
+
+	/** Returns true if this connection is valid in the current context. */
+	boolean isValid(PathFinder<N> pathFinder);
 
 }
